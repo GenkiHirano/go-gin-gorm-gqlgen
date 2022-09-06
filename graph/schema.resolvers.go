@@ -8,18 +8,17 @@ import (
 
 	"github.com/GenkiHirano/gqlgen-tutorial/graph/generated"
 	"github.com/GenkiHirano/gqlgen-tutorial/graph/model"
+	uuid "github.com/google/uuid"
 )
 
 // CreateTodo is the resolver for the createTodo field.
 func (r *mutationResolver) CreateTodo(ctx context.Context, input model.NewTodo) (*model.Todo, error) {
+	newID := uuid.NewString()
+
 	todo := &model.Todo{
-		ID:     input.UserID,
+		ID:     newID,
 		Text:   input.Text,
 		UserID: input.UserID,
-		User: &model.User{
-			ID:   input.UserID,
-			Name: "user " + input.UserID,
-		},
 	}
 
 	r.todos = append(r.todos, todo)
