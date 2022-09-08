@@ -4,5 +4,5 @@
 
 # 目的
 
-- gqlgen-tutorial を通して、gqlgen の理解を深め、GraphQL の基礎を復習する。
+- gqlgen の理解を深め、GraphQL の基礎を復習する。
 - ORM は GORM を使ってみる。
